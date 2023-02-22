@@ -1,0 +1,18 @@
+const api = new ApiService('https://my-api.com');
+
+// Log in with a user's email and password
+api.login('user@example.com', 'password123')
+  .then((token) => {
+    // Get all posts
+    api.getPosts()
+      .then((posts) => {
+        console.log(posts);
+      });
+
+    // Create a new post
+    api.createPost('My New Post', 'This is the content of my new post')
+      .then((post) => {
+        console.log(post);
+      });
+
+    // Update a post
